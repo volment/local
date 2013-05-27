@@ -1,0 +1,14 @@
+#file name change
+#!/bin/sh
+count=1;
+basename=$1
+extension=".mp4"
+for fname in *.mp4;do
+	if [ $count -lt 10 ] ; then
+		number="0${count}";
+	else
+		number=${count};
+	fi
+	mv "${fname}" "${basename}${number}${extension}"
+	count=`expr $count + 1`
+done

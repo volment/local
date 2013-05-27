@@ -1,0 +1,12 @@
+#!/bin/sh
+ps auxw | grep $1
+echo -n $'\e[0;32m'"Can I erase them ? (y/n)"
+read confirm
+if [ "y" != "${confirm}" ]; then
+        echo "stop"
+        exit
+fi
+
+kill -9 `ps auxw | grep $1 | awk '{print $2}'`
+
+echo Was killed

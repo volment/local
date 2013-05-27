@@ -1,0 +1,7 @@
+#!/bin/sh
+level=30
+if [ 1 == $# ]; then
+	level=$1
+fi
+sudo chmod 777 /sys/devices/virtual/backlight/psb-bl/brightness
+echo ${level} > /sys/devices/virtual/backlight/psb-bl/brightness

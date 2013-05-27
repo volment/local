@@ -1,0 +1,7 @@
+#!/bin/sh
+for FILE in `git grep -l $2 -- '$1'`
+do
+  sed -ie "s/$2/$3/g" "$FILE"
+  echo "displacement：$FILE"
+done
+echo "Finished."

@@ -1,0 +1,2 @@
+#!/bin/sh
+egrep '(warning|fatal|panic):' $1 | less
